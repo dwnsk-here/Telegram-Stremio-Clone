@@ -86,16 +86,11 @@ This project is a **next-generation Telegram Stremio Media Server** that allows 
 - 📊 **Bot-wise Analysis** – Detailed bot performance analytics available in the admin dashboard for monitoring and optimization.
 - 🧹 **Deleted File Detection** – Automatic detection of deleted files on every restart, with admin capability to manually remove them from the database.
 - 🛠️ **Additional Admin Features** – Various small enhancements and improvements for administrators.
+- 🆓 **Free Mode Toggle** – Administrators can turn off the `SUBSCRIPTION` requirement in `config.env` to allow all users immediate access via an automatically generated API token.
+- 🔄 **Automatic Stream Cleanup** – Deleting a source message in the Telegram channel instantly deletes all corresponding streams and qualities from the Stremio Addon Database and Admin Panel, preventing dead links.
+- 🏷️ **Manual IMDb/TMDb Override** – Users can instantly update or fix incorrect metadata for a file by simply editing the Telegram channel message caption and pasting the correct IMDb/TMDB URL.
 
 
-## 🆕 New Features
-
-- ⚡ **Speed Test** – Speed testing added for all bots on each file to optimize streaming performance.
-- 🔄 **Improved Load Balancer** – Enhanced load balancing algorithm for better traffic distribution across multiple tokens.
-- 🚫 **Failed Bot Management** – Max failed bots will be marked as shadow or idle for buffer optimization. This is due to some data center bots having rate-limiting constraints.
-- 📊 **Bot-wise Analysis** – Detailed bot performance analytics available in the admin dashboard for monitoring and optimization.
-- 🧹 **Deleted File Detection** – Automatic detection of deleted files on every restart, with admin capability to manually remove them from the database.
-- 🛠️ **Additional Admin Features** – Various small enhancements and improvements for administrators.
 
 
 ## ⚙️ How It Works
@@ -173,6 +168,18 @@ If you initially uploaded a **CAMRip or low-quality version**, you can easily re
 3. The Stremio addon will then **update automatically**, showing the new stream source.
 
 ✅ No manual deletion or command is needed — forwarding the updated file is enough!
+
+---
+
+### 🏷️ Fixing Incorrect Metadata (Manual Override)
+
+If the addon incorrectly identifies a movie or TV show, or if the metadata is entirely missing, you can fix it effortlessly by editing the message in your Telegram channel:
+
+1. Copy the correct **IMDb URL** or **TMDB URL** for the movie/show.
+2. Edit the message caption in your Telegram **AUTH CHANNEL** and paste the URL.
+3. The bot will automatically wipe the old, incorrect database entry for that file and instantly re-fetch the metadata using your provided link.
+
+✅ The Stremio addon catalog will update dynamically to reflect the correctly identified media.
 
 ---
 
@@ -718,4 +725,3 @@ If you want to use **only** your **Telegram Stremio Media Server addon** for met
 |:---:|:---:|:---:|:---:|
 |[`Karan`](https://github.com/Weebzone)|[`Stremio`](https://github.com/Stremio)|[`ChatGPT`](https://github.com/OPENAI)|[`VFlix Prime`](https://t.me/vflixprime2)|
 |Author|Stremio SDK|Refactor|Community Support
-
